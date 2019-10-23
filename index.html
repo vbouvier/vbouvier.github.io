@@ -1,15 +1,18 @@
-Syntax highlighted code block
+---
+layout: default
+---
 
-# Header 1
-## Header 2
-### Header 3
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
 
-- Bulleted
-- List
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-1. Numbered
-2. List
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
